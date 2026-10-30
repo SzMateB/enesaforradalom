@@ -1,0 +1,77 @@
+body {
+    transition: background-image 0.5s ease-in-out;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+}
+#szoveg{
+    margin-top: 3vw;
+    margin-bottom: 2vw;
+    width: min(90vw, 1200px);
+    font-size: clamp(1.2rem, 2.2vw, 2rem);
+    background-color: #f4ebd0;
+    color: #2b2b2b;
+    border: 2px solid#5c4033;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 8px 16px rgba(0,0,0, 0.4);
+}
+
+.gombok{
+    width: min(90vw, 1200px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 3vh;
+}
+
+button{
+    width: 80%;
+    height: clamp(45px, 6vh, 70px);
+    font-size: clamp(0.9rem, 1.8vw, 1.3rem);
+    border-radius: 8px;
+    background-color: #fdfaf1; 
+    color: #2b2b2b;
+    border: 1px solid #8c6d53;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.02);
+    background-color: #5c4033;
+    color: #f4ebd0;
+    border-color: #f4ebd0;
+}
+#szoveg,
+.gombok {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+/* Eltűnés animációja */
+#szoveg.elhalvanyul,
+.gombok.elhalvanyul {
+    opacity: 0;
+    transform: translateY(12px);
+}
+
+/* A gombok finom megjelenése */
+.gombok button {
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
